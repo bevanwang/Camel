@@ -4,7 +4,6 @@ public class Order {
 
     private Integer id;
     private String orderNo;
-    private int uid;
     private User user;
 
     public Integer getId() {
@@ -21,14 +20,6 @@ public class Order {
 
     public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
-    }
-
-    public int getUid() {
-        return uid;
-    }
-
-    public void setUid(int uid) {
-        this.uid = uid;
     }
 
     public User getUser() {

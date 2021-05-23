@@ -1,7 +1,6 @@
 package com.cpic;
 
 import com.cpic.mybatisDemo.domain.Order;
-import com.cpic.mybatisDemo.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,7 +10,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ibatisTest {
+public class TestOrder {
 
     @Test
     public void selectOne(){
@@ -22,8 +21,8 @@ public class ibatisTest {
             inputStream = Resources.getResourceAsStream(resource);
             SqlSessionFactory sf = new SqlSessionFactoryBuilder().build(inputStream);
             SqlSession s= sf.openSession();
-            Order order=s.selectOne("orders.selectOne","No002");
-            System.out.println(order.getUser().getName());
+            Order order=s.selectOne("orders.selectOne", 2);
+            System.out.println(order.getOrderNo());
             s.commit();
             s.close();
         } catch (IOException e) {
