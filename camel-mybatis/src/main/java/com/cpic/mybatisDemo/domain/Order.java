@@ -5,6 +5,7 @@ public class Order {
     private Integer id;
     private String orderNo;
     private int uid;
+    private User user;
 
     public Integer getId() {
         return id;
@@ -28,5 +29,13 @@ public class Order {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

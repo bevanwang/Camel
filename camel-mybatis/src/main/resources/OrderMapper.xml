@@ -2,8 +2,19 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="users">
-<insert id="insert">
-    insert into users(name,age) values(#{name},#{age})
-</insert>
+<mapper namespace="orders">
+<select id="selectOne" parameterType="String" resultMap="rm_orders">
+    select o.id oid,
+           o.orderno ooderno,
+           o.uid uid,
+           u.name uname from orders o, users u where o.uid=u.id and o.orderno=#{id}
+</select>
+    <resultMap id="rm_orders" type="com.cpic.mybatisDemo.domain.Order">
+        <id property="id" column="oid"></id>
+        <result property="orderNo" column="ooderno" />
+        <association property="User" javaType="com.cpic.mybatisDemo.domain.User">
+            <id column="uid" property="id" />
+            <result column="uname" property="name" />
+        </association>
+    </resultMap>
 </mapper>
