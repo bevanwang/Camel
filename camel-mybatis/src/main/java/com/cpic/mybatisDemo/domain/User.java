@@ -1,5 +1,8 @@
 package com.cpic.mybatisDemo.domain;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class User {
     private Integer id;
     private int age;
@@ -35,4 +38,11 @@ public class User {
         this.age = age;
         this.name = name;
     }
+
+    public User(){}
+
+    public void testHello(){
+        System.out.println("Resource 注入！！！");
+    }
+
 }

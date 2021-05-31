@@ -1,4 +1,4 @@
-package com.cpic.mybatisDemo;
+package com.cpic.mybatisDemo.app;
 
 import com.cpic.mybatisDemo.domain.User;
 import org.apache.ibatis.io.Resources;

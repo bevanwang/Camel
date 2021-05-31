@@ -3,6 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orders">
+
+    <insert id="insert">
+        insert into orders(orderno, uid) values(#{orderNo},#{user.id})
+    </insert>
+
 <select id="selectOne" parameterType="int" resultMap="rm_orders">
     select o.id oid,
            o.orderno ooderno,
